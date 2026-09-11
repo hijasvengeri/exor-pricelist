@@ -813,19 +813,31 @@ const handleLogout = async () => {
   // ===============================================
 
   return (
-    <div style={{ padding: 20 }}>
+    // <div style={{ padding: 20 }}>
+    <div className={styles.pageContainer}>
       {/* =================================================
           ROW 1:
           HEADING
           ================================================= */}
 
-      <Flex
+      {/* <Flex
         justify="space-between"
         align="center"
         style={{
           marginBottom: 20,
         }}
-      >
+      > */}
+
+
+      <Flex
+  justify="space-between"
+  align="center"
+  wrap="wrap"
+  gap="middle"
+  style={{
+    marginBottom: 20,
+  }}
+>
         <Title
           level={2}
           style={{
@@ -836,9 +848,10 @@ const handleLogout = async () => {
         </Title>
 
         <Flex
-          align="center"
-          gap="middle"
-        >
+  align="center"
+  gap="middle"
+  wrap="wrap"
+>
           {companyName && (
             <Typography.Text strong>
               Welcome, {companyName}
@@ -868,25 +881,29 @@ const handleLogout = async () => {
           SEARCH
           ================================================= */}
 
-      <Flex
-        justify="flex-end"
-        align="center"
-        wrap="wrap"
-        gap="middle"
-      >
-        <Input.Search
-          placeholder="Search by Item or Brand"
-          allowClear
-          onSearch={handleSearch}
-          onChange={(e) => {
-            setSearchTerm(e.target.value);
-            setCurrentPage(1);
-          }}
-          style={{
-            width: 250,
-          }}
-        />
-      </Flex>
+     <Flex
+  justify="flex-end"
+  align="center"
+  wrap="wrap"
+  gap="middle"
+  style={{
+    width: "100%",
+  }}
+>
+  <Input.Search
+    placeholder="Search by Item or Brand"
+    allowClear
+    onSearch={handleSearch}
+    onChange={(e) => {
+      setSearchTerm(e.target.value);
+      setCurrentPage(1);
+    }}
+    style={{
+      width: "100%",
+      maxWidth: 350,
+    }}
+  />
+</Flex>
 
       {/* =================================================
           PRODUCT TABLE
@@ -897,7 +914,7 @@ const handleLogout = async () => {
           marginTop: 20,
         }}
       >
-        <Table
+        {/* <Table
           className={
             styles.responsivePriceTable
           }
@@ -909,7 +926,24 @@ const handleLogout = async () => {
           scroll={{
             x: "max-content",
           }}
-        />
+        /> */}
+
+
+<div className={styles.tableWrapper}>
+  <Table
+    className={styles.responsivePriceTable}
+    columns={columns}
+    dataSource={paginatedData}
+    loading={loading}
+    rowKey="id"
+    pagination={false}
+    scroll={{
+      x: "max-content",
+    }}
+    size="small"
+  />
+</div>
+
 
 
 

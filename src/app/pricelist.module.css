@@ -186,3 +186,112 @@
   text-align: left !important;
   padding-left: 15px !important;
 }
+
+/* =========================================================
+   RESPONSIVE PRICE TABLE
+   ========================================================= */
+
+.tableWrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+}
+
+/* Prevent the page itself from becoming wider than the screen */
+.responsivePriceTable {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Keep table text compact */
+.responsivePriceTable :global(.ant-table) {
+  font-size: 13px;
+}
+
+.responsivePriceTable :global(.ant-table-thead > tr > th) {
+  white-space: nowrap;
+  padding: 8px 6px;
+}
+
+.responsivePriceTable :global(.ant-table-tbody > tr > td) {
+  padding: 7px 6px;
+}
+
+/* Product image */
+.responsivePriceTable :global(.ant-image) {
+  max-width: 60px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+  .responsivePriceTable :global(.ant-table) {
+    font-size: 12px;
+  }
+
+  .responsivePriceTable :global(.ant-table-thead > tr > th),
+  .responsivePriceTable :global(.ant-table-tbody > tr > td) {
+    padding: 6px 5px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .responsivePriceTable :global(.ant-table) {
+    font-size: 11px;
+  }
+
+  .responsivePriceTable :global(.ant-table-thead > tr > th) {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+
+  .responsivePriceTable :global(.ant-table-tbody > tr > td) {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+
+  .responsivePriceTable :global(.ant-image img) {
+    max-width: 45px !important;
+    max-height: 45px !important;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .responsivePriceTable :global(.ant-table) {
+    font-size: 10px;
+  }
+
+  .responsivePriceTable :global(.ant-table-thead > tr > th) {
+    padding: 5px 3px;
+    font-size: 10px;
+  }
+
+  .responsivePriceTable :global(.ant-table-tbody > tr > td) {
+    padding: 5px 3px;
+    font-size: 10px;
+  }
+
+  .responsivePriceTable :global(.ant-image img) {
+    max-width: 40px !important;
+    max-height: 40px !important;
+  }
+}

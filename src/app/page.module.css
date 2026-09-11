@@ -148,3 +148,21 @@ a.secondary {
   padding: 0.1em 0.4em;
   border-radius: 6px;
 }
+.pageContainer {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageContainer {
+    padding: 8px;
+  }
+}
